@@ -11,6 +11,7 @@ suite('Functional Tests', function () {
             test("Convert 10L (valid input)", function (done) {
                 chai
                     .request(server)
+                    .keepOpen()
                     .get("/api/convert")
                     .query({
                         input: "10L"
@@ -28,6 +29,7 @@ suite('Functional Tests', function () {
             test("Convert 32g (invalid input unit)", function (done) {
                 chai
                     .request(server)
+                    .keepOpen()
                     .get("/api/convert")
                     .query({
                         input: "32g"
@@ -42,6 +44,7 @@ suite('Functional Tests', function () {
             test("Convert 3/7.2/4kg (invalid number)", function (done) {
                 chai
                     .request(server)
+                    .keepOpen()
                     .get("/api/convert")
                     .query({
                         input: "3/7.2/4kg"
@@ -56,6 +59,7 @@ suite('Functional Tests', function () {
             test("Convert 3/7.2/4kilomegagram (invalid number and unit)", function (done) {
                 chai
                     .request(server)
+                    .keepOpen()
                     .get("/api/convert")
                     .query({
                         input: "3/7.2/4kilomegagram"
@@ -71,6 +75,7 @@ suite('Functional Tests', function () {
             test("Convert kg (no number)", function (done) {
                 chai
                     .request(server)
+                    .keepOpen()
                     .get("/api/convert")
                     .query({
                         input: "kg"
